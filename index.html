@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MSc Physics Notes | Portfolio</title>
+    
+    <!-- Google Fonts: Merriweather for that "Textbook" feel, Inter for UI -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Merriweather:ital,wght@0,300;0,400;0,700;1,400&family=Fira+Code&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Tailwind Config for Custom Fonts and Colors -->
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Merriweather', 'serif'],
+                        mono: ['Fira Code', 'monospace'],
+                    },
+                    colors: {
+                        academic: {
+                            50: '#f8fafc',
+                            100: '#f1f5f9',
+                            800: '#1e293b',
+                            900: '#0f172a',
+                        },
+                        accent: {
+                            light: '#3b82f6', // Blue for light mode
+                            dark: '#60a5fa',  // Lighter blue for dark mode
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- MathJax for LaTeX Equations -->
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>
+      window.MathJax = {
+        tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']],
+          displayMath: [['$$', '$$'], ['\\[', '\\]']]
+        }
+      };
+    </script>
+
+    <!-- Pyodide (Python in Browser) -->
+    <script src="https://cdn.jsdelivr.net/pyodide/v0.25.0/full/pyodide.js"></script>
+
+    <!-- PrismJS for Syntax Highlighting (CSS) -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet" />
+
+    <style>
+        /* Custom Scrollbar for Sidebar */
+        .custom-scroll::-webkit-scrollbar {
+            width: 6px;
+        }
+        .custom-scroll::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        .custom-scroll::-webkit-scrollbar-thumb {
+            background-color: #cbd5e1;
+            border-radius: 20px;
+        }
+        .dark .custom-scroll::-webkit-scrollbar-thumb {
+            background-color: #475569;
+        }
+        
+        /* MathJax adjustments */
+        mjx-container {
+            overflow-x: auto;
+            overflow-y: hidden;
+            padding: 1rem 0;
+        }
+
+        /* Interactive Code Editor Styling */
+        .code-editor {
+            font-family: 'Fira Code', monospace;
+            line-height: 1.5;
+            tab-size: 4;
+            outline: none;
+            border: none;
+            resize: none; 
+            width: 100%;
+            min-height: 300px;
+        }
+        
+        /* Spinner for Python Loading */
+        .loader {
+            border: 3px solid #f3f3f3;
+            border-radius: 50%;
+            border-top: 3px solid #3b82f6;
+            width: 20px;
+            height: 20px;
+            -webkit-animation: spin 1s linear infinite; /* Safari */
+            animation: spin 1s linear infinite;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body class="bg-academic-50 text-slate-800 dark:bg-academic-900 dark:text-slate-300 transition-colors duration-200 font-sans">
+
+    <!-- Top Navigation Bar -->
+    <nav class="fixed top-0 w-full z-50 bg-white/90 dark:bg-slate-900/90 backdrop-blur-sm border-b border-slate-200 dark:border-slate-800 h-16 flex items-center justify-between px-4 lg:px-8">
+        <div class="flex items-center gap-4">
+            <!-- Mobile Menu Button -->
+            <button id="menuBtn" class="lg:hidden p-2 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-md">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+            </button>
+            <a href="#" onclick="showSection('home')" class="text-xl font-bold tracking-tight text-slate-900 dark:text-white">
+                <span class="text-accent-light dark:text-accent-dark">Physics</span>Notes
+            </a>
+        </div>
+
+        <div class="flex items-center gap-4">
+            <a href="https://github.com" target="_blank" class="hidden sm:block text-sm font-medium hover:text-accent-light dark:hover:text-accent-dark">GitHub</a>
+            
+            <!-- Dark Mode Toggle -->
+            <button id="themeToggle" class="p-2 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">
+                <!-- Sun Icon -->
+                <svg id="sunIcon" class="w-5 h-5 hidden dark:block text-yellow-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+                </svg>
+                <!-- Moon Icon -->
+                <svg id="moonIcon" class="w-5 h-5 block dark:hidden text-slate-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+                </svg>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Main Container -->
+    <div class="flex pt-16 min-h-screen">
+
+        <!-- Sidebar (Navigation) -->
+        <aside id="sidebar" class="fixed inset-y-0 left-0 z-40 w-64 bg-white dark:bg-slate-900 border-r border-slate-200 dark:border-slate-800 transform -translate-x-full lg:translate-x-0 transition-transform duration-300 ease-in-out pt-20 pb-10 overflow-y-auto custom-scroll">
+            <div class="px-6 mb-6">
+                <p class="text-xs uppercase tracking-wider text-slate-500 dark:text-slate-400 font-bold mb-4">Course Material</p>
+                
+                <!-- Subject Group 1 -->
+                <div class="mb-6">
+                    <h3 class="font-semibold text-slate-900 dark:text-white mb-2 flex items-center gap-2">
+                        <span class="w-2 h-2 rounded-full bg-blue-500"></span>
+                        Quantum Mechanics
+                    </h3>
+                    <ul class="space-y-1 border-l-2 border-slate-100 dark:border-slate-800 ml-1 pl-3">
+                        <li><a href="#" onclick="showSection('intro')" class="block py-1 text-sm text-slate-600 dark:text-slate-400 hover:text-accent-light dark:hover:text-accent-dark">Wave Function Basics</a></li>
+                        <li><a href="#" onclick="showSection('box')" class="block py-1 text-sm text-slate-600 dark:text-slate-400 hover:text-accent-light dark:hover:text-accent-dark border-l-2 border-transparent hover:border-accent-light pl-2 -ml-3.5 bg-blue-50/50 dark:bg-blue-900/20 font-medium text-accent-light dark:text-accent-dark">Particle in a Box</a></li>
+                        <li><a href="#" class="block py-1 text-sm text-slate-600 dark:text-slate-400 hover:text-accent-light dark:hover:text-accent-dark">Harmonic Oscillator</a></li>
+                        <li><a href="#" class="block py-1 text-sm text-slate-600 dark:text-slate-400 hover:text-accent-light dark:hover:text-accent-dark">Hydrogen Atom</a></li>
+                    </ul>
+                </div>
+
+                <!-- Subject Group 2 -->
+                <div class="mb-6">
+                    <h3 class="font-semibold text-slate-900 dark:text-white mb-2 flex items-center gap-2">
+                        <span class="w-2 h-2 rounded-full bg-purple-500"></span>
+                        Computational Physics
+                    </h3>
+                    <ul class="space-y-1 border-l-2 border-slate-100 dark:border-slate-800 ml-1 pl-3">
+                        <li><a href="#" class="block py-1 text-sm text-slate-600 dark:text-slate-400 hover:text-accent-light dark:hover:text-accent-dark">NumPy Basics</a></li>
+                        <li><a href="#" class="block py-1 text-sm text-slate-600 dark:text-slate-400 hover:text-accent-light dark:hover:text-accent-dark">Euler Method</a></li>
+                        <li><a href="#" class="block py-1 text-sm text-slate-600 dark:text-slate-400 hover:text-accent-light dark:hover:text-accent-dark">Monte Carlo Sim</a></li>
+                    </ul>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Overlay for mobile sidebar -->
+        <div id="overlay" class="fixed inset-0 bg-black/50 z-30 hidden lg:hidden glass"></div>
+
+        <!-- Main Content -->
+        <main class="flex-1 lg:ml-64 w-full">
+            <div class="max-w-4xl mx-auto px-4 py-10 sm:px-6 lg:px-8">
+                
+                <!-- SECTION: HOME -->
+                <div id="home-section" class="block animate-fade-in">
+                    <div class="mb-12 text-center">
+                        <h1 class="text-4xl sm:text-5xl font-bold font-serif text-slate-900 dark:text-white mb-6">Physics Notes</h1>
+                        <p class="text-lg text-slate-600 dark:text-slate-300 max-w-2xl mx-auto font-serif leading-relaxed">
+                            A collection of derivations, definitions, and computational experiments from my MSc studies in Physics.
+                        </p>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <!-- Card 1 -->
+                        <div class="p-6 bg-white dark:bg-slate-800 rounded-xl shadow-sm border border-slate-200 dark:border-slate-700 hover:shadow-md transition-shadow cursor-pointer" onclick="showSection('box')">
+                            <div class="w-10 h-10 bg-blue-100 dark:bg-blue-900/50 rounded-lg flex items-center justify-center mb-4 text-blue-600 dark:text-blue-400">
+                                <span class="font-bold">QM</span>
+                            </div>
+                            <h2 class="text-xl font-bold text-slate-900 dark:text-white mb-2">Quantum Mechanics</h2>
+                            <p class="text-slate-600 dark:text-slate-400 text-sm mb-4">
+                                Perturbation theory, exact solutions, and scattering matrices.
+                            </p>
+                            <span class="text-accent-light dark:text-accent-dark text-sm font-medium hover:underline">Read Notes &rarr;</span>
+                        </div>
+
+                        <!-- Card 2 -->
+                        <div class="p-6 bg-white dark:bg-slate-800 rounded-xl shadow-sm border border-slate-200 dark:border-slate-700 hover:shadow-md transition-shadow">
+                            <div class="w-10 h-10 bg-purple-100 dark:bg-purple-900/50 rounded-lg flex items-center justify-center mb-4 text-purple-600 dark:text-purple-400">
+                                <span class="font-bold">CP</span>
+                            </div>
+                            <h2 class="text-xl font-bold text-slate-900 dark:text-white mb-2">Computational</h2>
+                            <p class="text-slate-600 dark:text-slate-400 text-sm mb-4">
+                                Python implementations of physical systems using NumPy and SciPy.
+                            </p>
+                            <span class="text-accent-light dark:text-accent-dark text-sm font-medium hover:underline">View Scripts &rarr;</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SECTION: PARTICLE IN A BOX (NOTE EXAMPLE) -->
+                <div id="note-section" class="hidden">
+                    <!-- Breadcrumbs -->
+                    <div class="flex items-center text-sm text-slate-500 dark:text-slate-400 mb-6 font-mono">
+                        <span>Quantum Mechanics</span>
+                        <span class="mx-2">/</span>
+                        <span class="text-accent-light dark:text-accent-dark">Exact Solutions</span>
+                    </div>
+
+                    <!-- Article Header -->
+                    <header class="mb-6 border-b border-slate-200 dark:border-slate-700 pb-6">
+                        <h1 class="text-3xl sm:text-4xl font-bold font-serif text-slate-900 dark:text-white mb-4">
+                            1D Particle in a Box
+                        </h1>
+                        <div class="flex items-center gap-4 text-sm text-slate-500">
+                            <span>Last updated: Dec 2025</span>
+                            <span>&bull;</span>
+                            <span>Reading time: 5 mins</span>
+                        </div>
+                    </header>
+
+                    <!-- TAB NAVIGATION -->
+                    <div class="flex gap-4 border-b border-slate-200 dark:border-slate-700 mb-8">
+                        <button id="tab-theory" onclick="switchTab('theory')" class="px-4 py-2 text-sm font-medium border-b-2 border-accent-light dark:border-accent-dark text-accent-light dark:text-accent-dark">
+                            Theory & Derivation
+                        </button>
+                        <button id="tab-sim" onclick="switchTab('sim')" class="px-4 py-2 text-sm font-medium border-b-2 border-transparent text-slate-500 hover:text-slate-700 dark:hover:text-slate-300">
+                            Simulation & Code
+                        </button>
+                    </div>
+
+                    <!-- TAB CONTENT: THEORY -->
+                    <div id="content-theory">
+                        <article class="prose prose-slate dark:prose-invert max-w-none font-serif">
+                            <p class="text-lg leading-relaxed text-slate-700 dark:text-slate-300 mb-6">
+                                The infinite square well is one of the simplest non-trivial problems in quantum mechanics. It demonstrates quantization of energy and the formation of standing waves.
+                            </p>
+
+                            <h3 class="text-2xl font-bold text-slate-900 dark:text-white mt-8 mb-4">The Hamiltonian</h3>
+                            <p class="text-slate-700 dark:text-slate-300 mb-4">
+                                Consider a particle of mass $m$ trapped in a 1D box of length $L$. The potential $V(x)$ is defined as:
+                            </p>
+
+                            <div class="bg-white dark:bg-slate-800 p-4 rounded-lg border border-slate-200 dark:border-slate-700 mb-6 shadow-sm overflow-x-auto">
+                                $$ V(x) = \begin{cases} 0 & 0 < x < L \\ \infty & \text{otherwise} \end{cases} $$
+                            </div>
+
+                            <p class="text-slate-700 dark:text-slate-300 mb-4">
+                                Inside the well ($V=0$), the Time-Independent Schrödinger Equation (TISE) simplifies to:
+                            </p>
+
+                            <div class="bg-white dark:bg-slate-800 p-4 rounded-lg border border-slate-200 dark:border-slate-700 mb-6 shadow-sm overflow-x-auto">
+                                $$ -\frac{\hbar^2}{2m} \frac{d^2\psi}{dx^2} = E\psi $$
+                            </div>
+                            
+                            <div class="bg-blue-50 dark:bg-blue-900/20 border-l-4 border-blue-500 p-4 mb-8">
+                                <p class="text-blue-700 dark:text-blue-300 text-sm font-sans m-0">
+                                    <strong>Physics Note:</strong> The boundary conditions $\psi(0) = \psi(L) = 0$ force the wave numbers to be quantized: $k_n = \frac{n\pi}{L}$.
+                                </p>
+                            </div>
+                        </article>
+                    </div>
+
+                    <!-- TAB CONTENT: SIMULATION (JUPYTER STYLE) -->
+                    <div id="content-sim" class="hidden">
+                        <div class="mb-4">
+                            <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2">Interactive Python Simulation</h3>
+                            <p class="text-slate-600 dark:text-slate-400 text-sm">
+                                You can modify the code below and run it directly in your browser. It uses <strong>NumPy</strong> and <strong>Matplotlib</strong> via Pyodide.
+                            </p>
+                        </div>
+
+                        <!-- Interactive Cell Container -->
+                        <div class="border border-slate-200 dark:border-slate-700 rounded-lg overflow-hidden shadow-sm bg-white dark:bg-slate-800">
+                            
+                            <!-- Cell Toolbar -->
+                            <div class="bg-slate-100 dark:bg-slate-900 border-b border-slate-200 dark:border-slate-700 px-4 py-2 flex justify-between items-center">
+                                <span class="text-xs font-mono text-slate-500">main.py</span>
+                                <div class="flex items-center gap-3">
+                                    <span id="py-status" class="text-xs text-slate-500 italic">Environment not loaded</span>
+                                    <button onclick="runPythonCode()" class="flex items-center gap-2 bg-green-600 hover:bg-green-700 text-white px-3 py-1.5 rounded text-sm font-medium transition-colors">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
+                                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd" />
+                                        </svg>
+                                        Run
+                                    </button>
+                                </div>
+                            </div>
+
+                            <!-- Editable Code Area -->
+                            <div class="relative bg-[#1e1e1e] p-4">
+<textarea id="python-code" class="code-editor text-slate-300 bg-transparent" spellcheck="false">
+import numpy as np
+import matplotlib.pyplot as plt
+import io, base64
+
+# --- User Parameters ---
+L = 1.0          # Width of the well
+levels = 3       # Number of energy levels to plot
+
+# --- Physics Calculation ---
+x = np.linspace(0, L, 500)
+
+def psi(n, x):
+    """Normalized wavefunction"""
+    return np.sqrt(2/L) * np.sin(n * np.pi * x / L)
+
+# --- Plotting ---
+plt.figure(figsize=(8, 5))
+plt.style.use('dark_background') # Looks cool in the editor
+
+for n in range(1, levels + 1):
+    density = psi(n, x)**2
+    # Shift graphs up so they don't overlap
+    plt.plot(x, density + (n-1)*3, label=f'n={n}, E={n**2}')
+    plt.fill_between(x, (n-1)*3, density + (n-1)*3, alpha=0.3)
+
+plt.title(f"Particle in a Box (First {levels} States)")
+plt.xlabel("Position (x/L)")
+plt.ylabel("Probability Density |ψ|² (shifted)")
+plt.yticks([])
+plt.legend()
+plt.tight_layout()
+
+# --- Return Image to Browser ---
+# Save plot to a buffer to display in HTML
+buf = io.BytesIO()
+plt.savefig(buf, format='png')
+buf.seek(0)
+img_str = 'data:image/png;base64,' + base64.b64encode(buf.read()).decode('UTF-8')
+plt.clf() # Clear the figure
+img_str # Last line is returned to JS
+</textarea>
+                            </div>
+
+                            <!-- Output Area -->
+                            <div id="output-area" class="bg-slate-50 dark:bg-slate-900 border-t border-slate-200 dark:border-slate-700 min-h-[100px] p-4 flex flex-col items-center justify-center text-slate-500 text-sm">
+                                <span class="italic mb-2">Output will appear here...</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Footer for Note -->
+                    <div class="mt-12 pt-8 border-t border-slate-200 dark:border-slate-700 flex justify-between">
+                        <a href="#" class="text-sm font-medium text-slate-500 hover:text-accent-light flex items-center gap-2">
+                            &larr; Previous: Intro to QM
+                        </a>
+                        <a href="#" class="text-sm font-medium text-slate-500 hover:text-accent-light flex items-center gap-2">
+                            Next: Harmonic Oscillator &rarr;
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </main>
+    </div>
+
+    <!-- UI Interaction Scripts -->
+    <script>
+        // --- 1. Tab Switching Logic ---
+        function switchTab(tabName) {
+            const btnTheory = document.getElementById('tab-theory');
+            const btnSim = document.getElementById('tab-sim');
+            const contentTheory = document.getElementById('content-theory');
+            const contentSim = document.getElementById('content-sim');
+
+            // Reset classes
+            const activeClass = "border-accent-light dark:border-accent-dark text-accent-light dark:text-accent-dark";
+            const inactiveClass = "border-transparent text-slate-500 hover:text-slate-700 dark:hover:text-slate-300";
+
+            if (tabName === 'theory') {
+                contentTheory.classList.remove('hidden');
+                contentSim.classList.add('hidden');
+                
+                btnTheory.className = `px-4 py-2 text-sm font-medium border-b-2 ${activeClass}`;
+                btnSim.className = `px-4 py-2 text-sm font-medium border-b-2 ${inactiveClass}`;
+            } else {
+                contentTheory.classList.add('hidden');
+                contentSim.classList.remove('hidden');
+                
+                btnSim.className = `px-4 py-2 text-sm font-medium border-b-2 ${activeClass}`;
+                btnTheory.className = `px-4 py-2 text-sm font-medium border-b-2 ${inactiveClass}`;
+                
+                // Trigger Python load if not loaded
+                if(!pyodideReady) initPyodide();
+            }
+        }
+
+        // --- 2. Pyodide (Python) Logic ---
+        let pyodideReady = false;
+        let pyodide = null;
+        const statusSpan = document.getElementById('py-status');
+        const outputArea = document.getElementById('output-area');
+
+        async function initPyodide() {
+            if (pyodideReady) return;
+            
+            statusSpan.innerHTML = `<div class="flex items-center gap-2"><div class="loader"></div> Loading Python Environment...</div>`;
+            
+            try {
+                pyodide = await loadPyodide();
+                await pyodide.loadPackage("numpy");
+                await pyodide.loadPackage("matplotlib");
+                
+                pyodideReady = true;
+                statusSpan.textContent = "Python Ready (NumPy + Matplotlib loaded)";
+                statusSpan.classList.add("text-green-600");
+                statusSpan.classList.remove("text-slate-500");
+            } catch (err) {
+                statusSpan.textContent = "Error loading Python";
+                console.error(err);
+            }
+        }
+
+        async function runPythonCode() {
+            if (!pyodideReady) {
+                await initPyodide();
+            }
+
+            const code = document.getElementById('python-code').value;
+            outputArea.innerHTML = `<div class="loader mb-2"></div><span class="text-xs">Running simulation...</span>`;
+
+            try {
+                // Execute code and expect the last line to be the base64 image string
+                let result = await pyodide.runPythonAsync(code);
+                
+                // If the result is a base64 string (image), display it
+                if (typeof result === 'string' && result.startsWith('data:image')) {
+                    outputArea.innerHTML = `<img src="${result}" class="max-w-full rounded shadow-md" alt="Plot Output"/>`;
+                } else {
+                    // Fallback for text output
+                    outputArea.innerHTML = `<pre class="text-xs font-mono text-slate-700 dark:text-slate-300 whitespace-pre-wrap">${result || "Execution Complete (No Output)"}</pre>`;
+                }
+
+            } catch (err) {
+                outputArea.innerHTML = `<div class="text-red-500 text-sm font-mono p-2 bg-red-50 dark:bg-red-900/20 rounded w-full">Error: ${err.message}</div>`;
+            }
+        }
+
+        // --- 3. Standard UI Logic (Dark Mode, Mobile Menu) ---
+        const themeToggle = document.getElementById('themeToggle');
+        const html = document.documentElement;
+        
+        if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            html.classList.add('dark');
+        } else {
+            html.classList.remove('dark');
+        }
+
+        themeToggle.addEventListener('click', () => {
+            html.classList.toggle('dark');
+            localStorage.theme = html.classList.contains('dark') ? 'dark' : 'light';
+        });
+
+        const menuBtn = document.getElementById('menuBtn');
+        const sidebar = document.getElementById('sidebar');
+        const overlay = document.getElementById('overlay');
+
+        function toggleMenu() {
+            sidebar.classList.toggle('-translate-x-full');
+            overlay.classList.toggle('hidden');
+        }
+
+        menuBtn.addEventListener('click', toggleMenu);
+        overlay.addEventListener('click', toggleMenu);
+
+        function showSection(sectionId) {
+            const home = document.getElementById('home-section');
+            const note = document.getElementById('note-section');
+            
+            if(window.innerWidth < 1024) {
+                sidebar.classList.add('-translate-x-full');
+                overlay.classList.add('hidden');
+            }
+
+            if (sectionId === 'box') {
+                home.classList.add('hidden');
+                note.classList.remove('hidden');
+                note.classList.add('animate-fade-in');
+                window.scrollTo(0, 0);
+            } else {
+                note.classList.add('hidden');
+                home.classList.remove('hidden');
+                home.classList.add('animate-fade-in');
+                window.scrollTo(0, 0);
+            }
+        }
+    </script>
+</body>
+</html>
