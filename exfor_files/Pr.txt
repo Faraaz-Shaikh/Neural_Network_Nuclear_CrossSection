@@ -1,0 +1,705 @@
+REQUEST         787001   20260807      70631   20260617          3    0  0    0
+ENTRY            G0518   20231106   20240400   20240331       G052G0518000    1
+SUBENT        G0518001   20231106   20240400   20240331       G052G0518001    1
+BIB                 13         28                                 G0518001    2
+TITLE      Average photonuclear cross section measurements for    G0518001    3
+           the 141Pr, 160Gd and 162Er isotopes and compared with  G0518001    4
+           Geant4 simulations                                     G0518001    5
+AUTHOR     (G.T.Bholane, T.S.Ganesapandy, S.H.Patil, S.S.Dahiwale,G0518001    6
+           V.N.Bhoraskar, S.D.Dhole)                              G0518001    7
+INSTITUTE  (3INDPOO)                                              G0518001    8
+REFERENCE  (J,EPJ/A,59,127,2023)                                  G0518001    9
+           #doi:10.1140/epja/s10050-023-01042-3                   G0518001   10
+FACILITY   (LINAC,3INDIND) Medical linear accelerator at          G0518001   11
+           Dr.Vikhe Patil Memorial Hospital, Ahmednagar           G0518001   12
+INC-SOURCE (BRST) 10 MeV and 15 MeV electron on a tungsten        G0518001   13
+           target.                                                G0518001   14
+SAMPLE     Pr2O3, Gd2O3 and Er2O3 powder (99.99% pure, 1 gm)      G0518001   15
+           sample of natural isotopic abundance. The Au foil used G0518001   16
+           for bremsstrahlung flux monitoring weighed 0.5 gm each.G0518001   17
+DETECTOR   (HPGE) resolution of 1.5 keV at 1.33 MeV gamma peak    G0518001   18
+MONITOR    (79-AU-197(G,N)79-AU-196,,SIG,,BRA)                    G0518001   19
+DECAY-MON  (79-AU-196-G,6.1669D,DG,355.73,0.87)                   G0518001   20
+ERR-ANALYS (ERR-T) Total uncertainty of measured cross section    G0518001   21
+           are due to                                             G0518001   22
+           (ERR-1) Area under the gamma peak                      G0518001   23
+           (ERR-2) Number of target atoms                         G0518001   24
+           (ERR-3) Gamma peak intensity                           G0518001   25
+           (ERR-4) Detector efficiency                            G0518001   26
+           (ERR-5) Integrated photon flux                         G0518001   27
+STATUS     (APRVD) Proof-read by S.D.Dhole (2024-01-20)           G0518001   28
+           (TABLE,,G.T.Bholane+,J,EPJ/A,59,127,2023) Table 6      G0518001   29
+HISTORY    (20231116C) Dr. Vishal D Bharud                        G0518001   30
+ENDBIB              28                                            G0518001   31
+NOCOMMON             0          0                                 G0518001   32
+ENDSUBENT           31                                            G051800199999
+SUBENT        G0518002   20231116   20240400   20240331       G052G0518002    1
+BIB                  2          2                                 G0518002    2
+REACTION   (59-PR-141(G,N)59-PR-140,,SIG,,BRA)                    G0518002    3
+DECAY-DATA (59-PR-140,3.39MIN,DG,1596.1,0.0049)                   G0518002    4
+ENDBIB               2                                            G0518002    5
+COMMON               3          3                                 G0518002    6
+ERR-2      ERR-3      ERR-4                                       G0518002    7
+PER-CENT   PER-CENT   PER-CENT                                    G0518002    8
+        0.1       8.16       5.06                                 G0518002    9
+ENDCOMMON            3                                            G0518002   10
+DATA                 6          2                                 G0518002   11
+EN-MAX     DATA       ERR-T      MONIT      ERR-1      ERR-5      G0518002   12
+MEV        MB         PER-CENT   MB         PER-CENT   PER-CENT   G0518002   13
+        10.      15.06      21.22      30.28      18.18       5.27G0518002   14
+        15.      86.11      14.02     161.24       8.68       5.36G0518002   15
+ENDDATA              4                                            G0518002   16
+ENDSUBENT           15                                            G051800299999
+ENDENTRY             2                                            G051899999999
+ENTRY            L0020   20240329   20240506   20240506       L052L0020000    1
+SUBENT        L0020001   20240329   20240506   20240506       L052L0020001    1
+BIB                 12         19                                 L0020001    2
+INSTITUTE  (1USAGGA)                                              L0020001    3
+REFERENCE  (J,PR/C,2,1129,1970)                                   L0020001    4
+           #doi:10.1103/PhysRevC.2.1129                           L0020001    5
+AUTHOR     (R.E.Sund,V.V.Verbinski,H.Weber,L.A.Kull)              L0020001    6
+TITLE      141Pr (gamma,n) cross section from threshold to 24 MeV L0020001    7
+FACILITY   (LINAC,1USAGGA)                                        L0020001    8
+INC-SOURCE (ARAD)                                                 L0020001    9
+METHOD     (ACTIV)                                                L0020001   10
+DETECTOR   (NAICR)                                                L0020001   11
+DECAY-DATA (59-PR-140,3.4MIN,AR)                                  L0020001   12
+ERR-ANALYS (DATA-ERR) Error bars shown in Fig.4 represent mainly  L0020001   13
+            the statistical uncertainty and a small uncertainty   L0020001   14
+            from a correction for secondary elecrons from Faraday L0020001   15
+            cup                                                   L0020001   16
+STATUS     (BERMN)                                                L0020001   17
+HISTORY    (19780511T) Converted from Berman compilation          L0020001   18
+           (19891201A) BIB Updated                                L0020001   19
+           (20240326A) OS. Added ERR-ANALYS, STATUS, updated      L0020001   20
+            REFERENCE; FACILITY                                   L0020001   21
+ENDBIB              19                                            L0020001   22
+NOCOMMON             0          0                                 L0020001   23
+ENDSUBENT           22                                            L002000199999
+SUBENT        L0020002   20240329   20240506   20240506       L052L0020002    1
+BIB                  2          2                                 L0020002    2
+REACTION   (59-PR-141(G,N)59-PR-140,,SIG)                         L0020002    3
+HISTORY    (19891205A)                                            L0020002    4
+ENDBIB               2                                            L0020002    5
+NOCOMMON             0          0                                 L0020002    6
+DATA                 3        100                                 L0020002    7
+EN         DATA       DATA-ERR                                    L0020002    8
+MEV        MB         MB                                          L0020002    9
+     8.89      12.        17.                                     L0020002   10
+     9.21       1.        18.                                     L0020002   11
+     9.42      14.        14.                                     L0020002   12
+     9.61       9.        11.                                     L0020002   13
+     9.77      26.         7.                                     L0020002   14
+     9.86      29.         6.                                     L0020002   15
+     9.96      25.         6.                                     L0020002   16
+    10.04      28.         5.                                     L0020002   17
+    10.14      32.         5.                                     L0020002   18
+    10.24      35.         4.                                     L0020002   19
+    10.33      32.         4.                                     L0020002   20
+    10.42      39.         4.                                     L0020002   21
+    10.49      45.         5.                                     L0020002   22
+    10.55      36.         5.                                     L0020002   23
+    10.66      37.         5.                                     L0020002   24
+    10.77      43.         5.                                     L0020002   25
+    10.87      44.         5.                                     L0020002   26
+    10.97      53.         5.                                     L0020002   27
+    11.09      44.         5.                                     L0020002   28
+    11.21      56.         5.                                     L0020002   29
+    11.33      50.         5.                                     L0020002   30
+    11.40      55.         5.                                     L0020002   31
+    11.48      63.         5.                                     L0020002   32
+    11.59      78.         5.                                     L0020002   33
+    11.73      81.         5.                                     L0020002   34
+    11.83      76.         5.                                     L0020002   35
+    11.93      77.         6.                                     L0020002   36
+    12.00      81.         6.                                     L0020002   37
+    12.10      87.         7.                                     L0020002   38
+    12.20     103.         7.                                     L0020002   39
+    12.32     107.         8.                                     L0020002   40
+    12.43     102.         8.                                     L0020002   41
+    12.53     107.         7.                                     L0020002   42
+    12.64     121.         6.                                     L0020002   43
+    12.73     119.         5.                                     L0020002   44
+    12.86     138.         6.                                     L0020002   45
+    12.96     138.         6.                                     L0020002   46
+    13.05     153.         7.                                     L0020002   47
+    13.18     151.         7.                                     L0020002   48
+    13.29     166.         6.                                     L0020002   49
+    13.40     179.         6.                                     L0020002   50
+    13.52     190.         6.                                     L0020002   51
+    13.65     207.         7.                                     L0020002   52
+    13.76     216.         7.                                     L0020002   53
+    13.91     230.         7.                                     L0020002   54
+    14.00     240.         8.                                     L0020002   55
+    14.12     256.         8.                                     L0020002   56
+    14.24     260.         7.                                     L0020002   57
+    14.35     283.         7.                                     L0020002   58
+    14.48     285.         6.                                     L0020002   59
+    14.60     293.         6.                                     L0020002   60
+    14.73     313.         6.                                     L0020002   61
+    14.86     318.         6.                                     L0020002   62
+    15.00     334.         7.                                     L0020002   63
+    15.13     339.         7.                                     L0020002   64
+    15.26     341.         7.                                     L0020002   65
+    15.39     352.         7.                                     L0020002   66
+    15.52     345.         7.                                     L0020002   67
+    15.65     350.         7.                                     L0020002   68
+    15.79     329.         8.                                     L0020002   69
+    15.98     300.         8.                                     L0020002   70
+    16.11     295.         8.                                     L0020002   71
+    16.26     283.         9.                                     L0020002   72
+    16.41     264.         9.                                     L0020002   73
+    16.55     236.         8.                                     L0020002   74
+    16.68     224.         7.                                     L0020002   75
+    16.81     217.         6.                                     L0020002   76
+    16.95     202.         6.                                     L0020002   77
+    17.04     192.         6.                                     L0020002   78
+    17.10     201.         6.                                     L0020002   79
+    17.28     185.         7.                                     L0020002   80
+    17.39     182.         8.                                     L0020002   81
+    17.49     171.         9.                                     L0020002   82
+    17.56     151.         9.                                     L0020002   83
+    17.70     152.         8.                                     L0020002   84
+    17.88     136.         8.                                     L0020002   85
+    18.05     115.         8.                                     L0020002   86
+    18.20     100.         8.                                     L0020002   87
+    18.35      91.         8.                                     L0020002   88
+    18.50      91.         7.                                     L0020002   89
+    18.67      90.         7.                                     L0020002   90
+    18.81      76.         6.                                     L0020002   91
+    18.98      78.         6.                                     L0020002   92
+    19.15      69.         7.                                     L0020002   93
+    19.30      69.         7.                                     L0020002   94
+    19.48      60.         7.                                     L0020002   95
+    19.69      58.         7.                                     L0020002   96
+    19.91      50.         7.                                     L0020002   97
+    20.10      38.         7.                                     L0020002   98
+    20.29      48.         7.                                     L0020002   99
+    20.51      42.         7.                                     L0020002  100
+    20.67      31.         7.                                     L0020002  101
+    20.87      29.         8.                                     L0020002  102
+    21.11      28.         8.                                     L0020002  103
+    21.33      36.         8.                                     L0020002  104
+    21.55      15.         8.                                     L0020002  105
+    22.02      24.         8.                                     L0020002  106
+    22.60      23.         8.                                     L0020002  107
+    23.12      27.         8.                                     L0020002  108
+    23.69      21.         8.                                     L0020002  109
+ENDDATA            102                                            L0020002  110
+ENDSUBENT          109                                            L002000299999
+ENDENTRY             2                                            L002099999999
+ENTRY            L0037   20110119   20110323   20110311       M056L0037000    1
+SUBENT        L0037001   20110119   20110323   20110311       M056L0037001    1
+BIB                 13         39                                 L0037001    2
+TITLE      Photonuclear activation by 20.5-MeV gamma rays.        L0037001    3
+AUTHOR     (W.E.DEL BIANCO,W.E.STEPHENS)                          L0037001    4
+INSTITUTE  (1USAPEN)                                              L0037001    5
+REFERENCE  (J,PR,126,709,196204)                                  L0037001    6
+           #doi:10.1103/PhysRev.126.709                           L0037001    7
+FACILITY   (VDG,1USAPEN) Electrostatic accelerator -              L0037001    8
+            Van de Graaff.                                        L0037001    9
+INC-SOURCE (MPH=(1-H-3(P,G)2-HE-4)) Gamma-ray energy resolution   L0037001   10
+            about 250 keV at energy of 20.48 MeV.                 L0037001   11
+DETECTOR   (NAICR) Positron activity was determined by a          L0037001   12
+            coincidence detector, consisting of two 5 by 2 inch   L0037001   13
+            NaI crystals set on the annihilation radiation        L0037001   14
+            photopeaks. This detector was calibrated against a    L0037001   15
+            18F positron source standardized in a 2pi flow        L0037001   16
+            counter.                                              L0037001   17
+           Gamma-rays were monitored by a 3 by 4 inch NaI crystal L0037001   18
+            and calibrated with a 4.5 * 6 inch crystal whose      L0037001   19
+            response curve to the gamma rays was determined. The  L0037001   20
+            absorption coefficient of these photons in 'NaI' was  L0037001   21
+            determined by a good geometry transmission experiment L0037001   22
+METHOD     (ACTIV)                                                L0037001   23
+PART-DET   (AR) Positron annihilation radiation.                  L0037001   24
+ANALYSIS   Direct measurement of positron activity.               L0037001   25
+ERR-ANALYS (DATA-ERR) Represents standard error due to counting   L0037001   26
+            statistics and other gaussian errors, but does not    L0037001   27
+            include the error involved in the determination of    L0037001   28
+            the absolute efficiency of the positron and photon    L0037001   29
+            detectors.                                            L0037001   30
+           The uncertainty in the calibration of the gamma-ray    L0037001   31
+            monitor was estimated to be less then 3.5%; the error L0037001   32
+            attributed to efficiency of the positron detector     L0037001   33
+            varied from 1 to 3%.                                  L0037001   34
+COMMENT    Structure in the 12C(gamma,n)11C and 19F(gamma,n)18F   L0037001   35
+            reactions, although reported by other experiments,    L0037001   36
+            was not observed.                                     L0037001   37
+HISTORY    (19891206C)                                            L0037001   38
+           (20110119A) Corrected by V.Varlamov: dates, REFERENCE, L0037001   39
+            INSTITUTE, FACILITY, INC-SOURCE in  SUBENT 001,  one  L0037001   40
+            DATA point corrected in SUBENT 002, STATUS in others. L0037001   41
+ENDBIB              39                                            L0037001   42
+NOCOMMON             0          0                                 L0037001   43
+ENDSUBENT           42                                            L003700199999
+SUBENT        L0037009   20110119   20110323   20110311       M056L0037009    1
+BIB                  3          3                                 L0037009    2
+REACTION   (59-PR-141(G,N)59-PR-140,,SIG)                         L0037009    3
+SAMPLE     Pure metal (purity 99.9%).                             L0037009    4
+STATUS     (TABLE) Data taken from table in article               L0037009    5
+ENDBIB               3                                            L0037009    6
+NOCOMMON             0          0                                 L0037009    7
+DATA                 3          1                                 L0037009    8
+EN         DATA       DATA-ERR                                    L0037009    9
+MEV        MB         MB                                          L0037009   10
+  20.48     51.7        5.4                                       L0037009   11
+ENDDATA              3                                            L0037009   12
+ENDSUBENT           11                                            L003700999999
+ENDENTRY             2                                            L003799999999
+ENTRY            L0072   20150114   20150505   20150428       L026L0072000    1
+SUBENT        L0072001   20150114   20150505   20150428       L026L0072001    1
+BIB                 11         19                                 L0072001    2
+TITLE      Praseodymium-141 Photoneutron Cross Section to 65 MeV  L0072001    3
+AUTHOR     (B.C.Cook,D.R.Hutchinson,R.C.Waring,J.N.Bradford,      L0072001    4
+           R.G.Johnson,J.E.Griffin)                               L0072001    5
+REFERENCE  (J,PR,143,730,1966)                                    L0072001    6
+           #doi:10.1103/PhysRev.143.730                           L0072001    7
+INSTITUTE  (1USASUI)                                              L0072001    8
+FACILITY   (SYNCH,1USASUI)                                        L0072001    9
+INC-SOURCE (BRST)                                                 L0072001   10
+SAMPLE     Samples were disks of pure 141Pr 1.9 cm in diameter    L0072001   11
+           and 1.59 mm thick.                                     L0072001   12
+RAD-DET    (59-PR-140,AR)                                         L0072001   13
+DETECTOR   (NAICR) 4x4 in. well-type NaI(Tl) crystal.             L0072001   14
+CORRECTION Corrections due to sample nonuniformity were less      L0072001   15
+           than 4%. As measurements were performed at energies    L0072001   16
+           above the (g,2n) and (g,3n) thresholds, these          L0072001   17
+           reactions were measured separately to determine the    L0072001   18
+           appropriate corrections. Maximum correction was 1.5%   L0072001   19
+           at 65 MeV.                                             L0072001   20
+HISTORY    (20150114C) BP                                         L0072001   21
+ENDBIB              19                                            L0072001   22
+NOCOMMON             0          0                                 L0072001   23
+ENDSUBENT           22                                            L007200199999
+SUBENT        L0072004   20150114   20150505   20150428       L026L0072004    1
+BIB                  5         14                                 L0072004    2
+REACTION   (59-PR-141(G,N)59-PR-140,,SIG,,BRS)                    L0072004    3
+METHOD     (ACTIV,GSPEC) 0.5-MeV energy increment: Samples were   L0072004    4
+           irradiated for 5 min, one minute was allowed to        L0072004    5
+           elapse during which the sample was removed to the      L0072004    6
+           radioactivity counting system, then the annihilation   L0072004    7
+           photons from 140Pr were counted for 5 min.             L0072004    8
+ANALYSIS   (LEAST) Cross section curve was calculated from yield  L0072004    9
+           data taken at 0.5-MeV increments.                      L0072004   10
+ERR-ANALYS (ERR-T) The combined errors of the factors             L0072004   11
+           contributing to the absolute cross sections: 5.5%.     L0072004   12
+           (ERR-S) The average random errors with counting        L0072004   13
+           statistics.                                            L0072004   14
+           (DATA-ERR) Experimental error shown  in figure         L0072004   15
+STATUS     (CURVE) Fig. 1, page 733.                              L0072004   16
+ENDBIB              14                                            L0072004   17
+COMMON               2          3                                 L0072004   18
+ERR-T      ERR-S                                                  L0072004   19
+PER-CENT   PER-CENT                                               L0072004   20
+        5.5       0.41                                            L0072004   21
+ENDCOMMON            3                                            L0072004   22
+DATA                 4        113                                 L0072004   23
+EN         EN-RSL-FW  DATA       DATA-ERR                         L0072004   24
+MEV        MEV        MB         MB                               L0072004   25
+      9.192                 7.140                                 L0072004   26
+      9.628                17.909                                 L0072004   27
+     10.145                34.068                                 L0072004   28
+     10.700                47.229                                 L0072004   29
+     11.137                62.194                                 L0072004   30
+     11.613                75.958                                 L0072004   31
+     12.209                98.707                                 L0072004   32
+     12.650               131.652                                 L0072004   33
+     13.172               176.581                                 L0072004   34
+     13.617               232.901                                 L0072004   35
+     14.102               291.617                                 L0072004   36
+     14.547               347.938                                 L0072004   37
+     15.106      0.671    380.278      5.392                      L0072004   38
+     15.538               372.467                                 L0072004   39
+     16.121               324.491                                 L0072004   40
+     16.621               257.939                                 L0072004   41
+     17.200               192.583                                 L0072004   42
+     17.663               138.019                                 L0072004   43
+     18.169                99.637                                 L0072004   44
+     18.676                72.643                                 L0072004   45
+     19.186                54.040                                 L0072004   46
+     19.657                40.833                                 L0072004   47
+     20.247                32.415                                 L0072004   48
+     20.562                26.407                                 L0072004   49
+     21.074                22.788      6.595                      L0072004   50
+     21.704                16.766                                 L0072004   51
+     22.217                13.146                                 L0072004   52
+     22.650                10.130                                 L0072004   53
+     23.163                 7.110                                 L0072004   54
+     23.872                 4.681                                 L0072004   55
+     24.188                 4.067                                 L0072004   56
+     24.661                 2.248                                 L0072004   57
+     25.687                -0.196                                 L0072004   58
+     26.200                -1.418                                 L0072004   59
+     26.634                -2.037                                 L0072004   60
+     27.265                -2.065                                 L0072004   61
+     27.699                -1.485                                 L0072004   62
+     28.173                -2.106                                 L0072004   63
+     28.607                -1.526                                 L0072004   64
+     29.200                 2.043                                 L0072004   65
+     29.713                 3.219                                 L0072004   66
+     30.739                 5.570                                 L0072004   67
+     31.174                 6.750                                 L0072004   68
+     31.727                 8.523                                 L0072004   69
+     32.279                 7.898      5.396                      L0072004   70
+     32.792                 7.875                                 L0072004   71
+     33.186                 7.258                                 L0072004   72
+     33.778                 6.632                                 L0072004   73
+     34.173                 6.015                                 L0072004   74
+     34.725                 5.990                                 L0072004   75
+     35.317                 5.964                                 L0072004   76
+     35.712                 6.545                                 L0072004   77
+     36.225                 7.721                                 L0072004   78
+     36.699                 8.898                                 L0072004   79
+     37.212                10.074                                 L0072004   80
+     37.805                11.246                                 L0072004   81
+     38.239                11.826                                 L0072004   82
+     38.713                13.602                                 L0072004   83
+     38.989      1.934     14.189      6.595                      L0072004   84
+     39.147                14.182                                 L0072004   85
+     39.660                12.960                                 L0072004   86
+     40.133                12.939                                 L0072004   87
+     40.725                11.714                                 L0072004   88
+     41.159                 9.297                                 L0072004   89
+     41.711                 8.673                                 L0072004   90
+     42.263                 6.850                                 L0072004   91
+     42.736                 5.630                                 L0072004   92
+     43.289                 6.204                                 L0072004   93
+     43.802                 6.181                                 L0072004   94
+     44.157                 6.764                                 L0072004   95
+     44.710                 7.938                                 L0072004   96
+     45.342                 9.108                                 L0072004   97
+     45.776                10.887                                 L0072004   98
+     46.250                12.064                                 L0072004   99
+     46.685                15.042                                 L0072004  100
+     47.237                15.616                                 L0072004  101
+     47.750                14.394                                 L0072004  102
+     48.303                14.369                                 L0072004  103
+     48.697                13.752                                 L0072004  104
+     49.210                14.928                                 L0072004  105
+     49.763                14.304                                 L0072004  106
+     50.236                14.882                                 L0072004  107
+     50.750                15.458                                 L0072004  108
+     51.223                16.036                                 L0072004  109
+     51.776                15.412                                 L0072004  110
+     52.210                15.992                                 L0072004  111
+     52.644                17.171                                 L0072004  112
+     53.118                18.348                                 L0072004  113
+     53.789                18.917                                 L0072004  114
+     54.263                20.095                                 L0072004  115
+     54.658                22.474                                 L0072004  116
+     55.131                22.453                                 L0072004  117
+     55.763                22.425                                 L0072004  118
+     55.960      2.407     23.614      7.191                      L0072004  119
+     56.276                21.203                                 L0072004  120
+     56.749                21.181                                 L0072004  121
+     57.222                19.362                                 L0072004  122
+     57.696                17.543                                 L0072004  123
+     58.130                16.324                                 L0072004  124
+     58.721                15.099                                 L0072004  125
+     59.155                13.281                                 L0072004  126
+     59.510                12.666                                 L0072004  127
+     59.826                11.453                                 L0072004  128
+     60.220                10.237                                 L0072004  129
+     60.733                10.813                                 L0072004  130
+     61.246                 9.591                                 L0072004  131
+     61.798                 8.967                                 L0072004  132
+     62.311                 9.543                                 L0072004  133
+     62.785                 8.922                                 L0072004  134
+     63.259                10.699                                 L0072004  135
+     63.732                11.277                                 L0072004  136
+     64.206                 9.458                                 L0072004  137
+     64.679                10.635                                 L0072004  138
+ENDDATA            115                                            L0072004  139
+ENDSUBENT          138                                            L007200499999
+ENDENTRY             2                                            L007299999999
+ENTRY            M0367   20140716   20141103   20141027       M074M0367000    1
+SUBENT        M0367001   20140716   20141103   20141027       M074M0367001    1
+BIB                 13         23                                 M0367001    2
+TITLE      Analysis  of the intermediate structure  in the (g,n)- M0367001    3
+            cross sections on nuclei with N=82.                   M0367001    4
+AUTHOR     (S.N.Beljaev,V.A.Semenov)                              M0367001    5
+REFERENCE  (J,IZV,55,(5),953,1991)                                M0367001    6
+           (J,BAS,55,(5),66,1991)                                 M0367001    7
+            English translation of IZV,55,(5),953,1991.           M0367001    8
+INSTITUTE  (4RUSSGU)                                              M0367001    9
+FACILITY   (BETAT,4RUSSGU)                                        M0367001   10
+INC-SOURCE (BRST)                                                 M0367001   11
+DETECTOR   (BF3)                                                  M0367001   12
+ANALYSIS   The photoneutron cross sections were obtained from the M0367001   13
+            photoneutron yield curves by means of the statistical M0367001   14
+            regularization method.                                M0367001   15
+ERR-ANALYS (DATA-ERR) Root-mean-squared errors.                   M0367001   16
+MONITOR    (60-ND-142(G,N)60-ND-141,,SIG)                         M0367001   17
+MONIT-REF  (,S.S.Dietrich+,J,AND,38,199,1988)                     M0367001   18
+STATUS     (TABLE,APRVD) By S.N.Beljaev.                          M0367001   19
+           The data in form of the tables were received           M0367001   20
+            from the authors.                                     M0367001   21
+HISTORY    (19911025C) Data  were  compiled at  SCJAD of Saratov  M0367001   22
+            State University.                                     M0367001   23
+           (20140716A) Corrected  by  V.Varlamov:   REFERENCE,    M0367001   24
+            STATUS, ERR-ANALYS, dates, lowercase.                 M0367001   25
+ENDBIB              23                                            M0367001   26
+NOCOMMON             0          0                                 M0367001   27
+ENDSUBENT           26                                            M036700199999
+SUBENT        M0367006     940304              20050926       0000M0367006    1
+BIB                  1          1                                 M0367006    2
+REACTION   (59-PR-141(G,N)59-PR-140,,SIG,,BRS)                    M0367006    3
+ENDBIB               1                                            M0367006    4
+NOCOMMON                                                          M0367006    5
+DATA                 3        185                                 M0367006    6
+EN         DATA       DATA-ERR                                    M0367006    7
+MEV        MB         MB                                          M0367006    8
+ 7.98        1.29     1.25                                        M0367006    9
+ 8.10        0.92     0.73                                        M0367006   10
+ 8.22        0.00     0.84                                        M0367006   11
+ 8.34        0.00     0.81                                        M0367006   12
+ 8.46        0.00     0.84                                        M0367006   13
+ 8.58        0.00     0.82                                        M0367006   14
+ 8.70        0.00     0.84                                        M0367006   15
+ 8.82        0.00     0.84                                        M0367006   16
+ 8.94        0.09     0.85                                        M0367006   17
+ 9.06        0.37     0.86                                        M0367006   18
+ 9.18        0.45     0.87                                        M0367006   19
+ 9.30        0.77     0.90                                        M0367006   20
+ 9.42        6.44     0.93                                        M0367006   21
+ 9.54       21.09     1.02                                        M0367006   22
+ 9.63       30.08     1.10                                        M0367006   23
+ 9.69       33.51     1.16                                        M0367006   24
+ 9.75       35.08     1.21                                        M0367006   25
+ 9.81       35.57     1.27                                        M0367006   26
+ 9.87       35.54     1.33                                        M0367006   27
+ 9.93       35.28     1.39                                        M0367006   28
+ 9.99       35.13     1.44                                        M0367006   29
+10.05       35.26     1.49                                        M0367006   30
+10.11       35.71     1.53                                        M0367006   31
+10.17       36.43     1.58                                        M0367006   32
+10.23       37.33     1.62                                        M0367006   33
+10.29       38.31     1.66                                        M0367006   34
+10.35       39.21     1.70                                        M0367006   35
+10.41       40.01     1.74                                        M0367006   36
+10.47       40.80     1.78                                        M0367006   37
+10.53       41.71     1.81                                        M0367006   38
+10.59       42.89     1.85                                        M0367006   39
+10.65       44.39     1.88                                        M0367006   40
+10.71       46.22     1.91                                        M0367006   41
+10.77       48.33     1.94                                        M0367006   42
+10.83       50.66     1.98                                        M0367006   43
+10.89       53.08     2.01                                        M0367006   44
+10.95       55.44     2.04                                        M0367006   45
+11.01       57.62     2.07                                        M0367006   46
+11.07       59.56     2.10                                        M0367006   47
+11.13       61.27     2.12                                        M0367006   48
+11.19       62.79     2.15                                        M0367006   49
+11.25       64.20     2.18                                        M0367006   50
+11.31       65.58     2.21                                        M0367006   51
+11.37       67.03     2.24                                        M0367006   52
+11.43       68.65     2.26                                        M0367006   53
+11.49       70.52     2.29                                        M0367006   54
+11.55       72.64     2.32                                        M0367006   55
+11.61       74.97     2.34                                        M0367006   56
+11.67       77.47     2.37                                        M0367006   57
+11.73       80.09     2.39                                        M0367006   58
+11.79       82.77     2.42                                        M0367006   59
+11.85       85.47     2.44                                        M0367006   60
+11.91       88.20     2.47                                        M0367006   61
+11.97       90.97     2.49                                        M0367006   62
+12.03       93.80     2.52                                        M0367006   63
+12.09       96.74     2.54                                        M0367006   64
+12.15       99.80     2.57                                        M0367006   65
+12.21      102.98     2.59                                        M0367006   66
+12.27      106.23     2.61                                        M0367006   67
+12.33      109.50     2.64                                        M0367006   68
+12.39      112.77     2.66                                        M0367006   69
+12.45      116.05     2.68                                        M0367006   70
+12.51      119.41     2.71                                        M0367006   71
+12.57      122.91     2.73                                        M0367006   72
+12.63      126.63     2.76                                        M0367006   73
+12.69      130.66     2.78                                        M0367006   74
+12.75      135.05     2.80                                        M0367006   75
+12.81      139.81     2.83                                        M0367006   76
+12.87      144.92     2.85                                        M0367006   77
+12.93      150.36     2.87                                        M0367006   78
+12.99      156.09     2.90                                        M0367006   79
+13.05      162.07     2.93                                        M0367006   80
+13.11      168.25     2.95                                        M0367006   81
+13.17      174.57     2.98                                        M0367006   82
+13.23      181.00     3.01                                        M0367006   83
+13.29      187.47     3.04                                        M0367006   84
+13.35      193.94     3.07                                        M0367006   85
+13.41      200.35     3.10                                        M0367006   86
+13.47      206.63     3.13                                        M0367006   87
+13.53      212.74     3.16                                        M0367006   88
+13.59      218.68     3.21                                        M0367006   89
+13.65      224.50     3.26                                        M0367006   90
+13.71      230.24     3.33                                        M0367006   91
+13.77      235.97     3.42                                        M0367006   92
+13.83      241.75     3.52                                        M0367006   93
+13.89      247.64     3.63                                        M0367006   94
+13.95      253.71     3.72                                        M0367006   95
+14.01      260.00     3.80                                        M0367006   96
+14.07      266.51     3.85                                        M0367006   97
+14.13      273.21     3.88                                        M0367006   98
+14.19      280.07     3.93                                        M0367006   99
+14.25      287.05     4.08                                        M0367006  100
+14.31      295.18     2.71                                        M0367006  101
+14.37      302.92     3.01                                        M0367006  102
+14.43      310.46     3.47                                        M0367006  103
+14.49      317.73     3.87                                        M0367006  104
+14.55      324.63     4.12                                        M0367006  105
+14.61      331.07     4.25                                        M0367006  106
+14.67      336.94     4.27                                        M0367006  107
+14.73      342.15     4.21                                        M0367006  108
+14.79      346.60     4.13                                        M0367006  109
+14.85      350.23     4.04                                        M0367006  110
+14.91      353.00     3.98                                        M0367006  111
+14.97      354.87     3.94                                        M0367006  112
+15.03      355.85     3.95                                        M0367006  113
+15.09      355.97     3.98                                        M0367006  114
+15.15      355.26     4.02                                        M0367006  115
+15.21      353.75     4.07                                        M0367006  116
+15.27      351.49     4.13                                        M0367006  117
+15.33      348.55     4.17                                        M0367006  118
+15.39      344.98     4.21                                        M0367006  119
+15.45      340.88     4.24                                        M0367006  120
+15.51      336.29     4.26                                        M0367006  121
+15.57      331.31     4.28                                        M0367006  122
+15.63      325.98     4.29                                        M0367006  123
+15.69      320.35     4.31                                        M0367006  124
+15.75      314.47     4.32                                        M0367006  125
+15.81      308.38     4.34                                        M0367006  126
+15.87      302.08     4.35                                        M0367006  127
+15.93      295.61     4.37                                        M0367006  128
+15.99      288.98     4.39                                        M0367006  129
+16.05      282.17     4.41                                        M0367006  130
+16.11      275.15     4.43                                        M0367006  131
+16.17      267.95     4.46                                        M0367006  132
+16.23      260.71     4.50                                        M0367006  133
+16.29      253.34     4.54                                        M0367006  134
+16.35      245.78     4.58                                        M0367006  135
+16.41      238.14     4.63                                        M0367006  136
+16.47      230.45     4.69                                        M0367006  137
+16.53      222.77     4.75                                        M0367006  138
+16.59      215.15     4.81                                        M0367006  139
+16.65      207.64     4.87                                        M0367006  140
+16.71      200.32     4.92                                        M0367006  141
+16.77      193.26     4.95                                        M0367006  142
+16.83      186.55     4.98                                        M0367006  143
+16.89      180.25     5.01                                        M0367006  144
+16.95      174.43     5.02                                        M0367006  145
+17.01      169.13     5.04                                        M0367006  146
+17.07      164.37     5.06                                        M0367006  147
+17.13      160.13     5.09                                        M0367006  148
+17.19      156.43     5.13                                        M0367006  149
+17.25      153.23     5.17                                        M0367006  150
+17.31      150.53     5.18                                        M0367006  151
+17.37      148.15     5.12                                        M0367006  152
+17.46      144.51     5.00                                        M0367006  153
+17.58      139.48     4.99                                        M0367006  154
+17.70      134.46     5.11                                        M0367006  155
+17.82      129.72     5.24                                        M0367006  156
+17.94      125.31     5.32                                        M0367006  157
+18.06      121.23     5.36                                        M0367006  158
+18.18      117.42     5.38                                        M0367006  159
+18.30      113.83     5.38                                        M0367006  160
+18.42      110.42     5.38                                        M0367006  161
+18.54      107.18     5.40                                        M0367006  162
+18.66      104.07     5.42                                        M0367006  163
+18.78      101.07     5.46                                        M0367006  164
+18.90       98.22     5.49                                        M0367006  165
+19.02       95.56     5.52                                        M0367006  166
+19.14       93.14     5.54                                        M0367006  167
+19.26       91.01     5.57                                        M0367006  168
+19.38       89.19     5.59                                        M0367006  169
+19.50       87.63     5.62                                        M0367006  170
+19.62       86.29     5.65                                        M0367006  171
+19.74       85.12     5.69                                        M0367006  172
+19.86       84.06     5.73                                        M0367006  173
+19.98       83.05     5.78                                        M0367006  174
+20.10       82.00     5.82                                        M0367006  175
+20.22       80.86     5.84                                        M0367006  176
+20.34       79.56     5.86                                        M0367006  177
+20.46       78.05     5.87                                        M0367006  178
+20.58       76.31     5.88                                        M0367006  179
+20.70       74.30     5.89                                        M0367006  180
+20.82       71.99     5.89                                        M0367006  181
+20.94       69.35     5.80                                        M0367006  182
+21.12       64.98     5.63                                        M0367006  183
+21.36       58.85     5.65                                        M0367006  184
+21.60       52.78     5.80                                        M0367006  185
+21.84       47.07     5.92                                        M0367006  186
+22.08       41.92     6.03                                        M0367006  187
+22.32       37.29     6.22                                        M0367006  188
+22.56       33.00     6.44                                        M0367006  189
+22.80       28.81     6.56                                        M0367006  190
+23.04       24.61     6.58                                        M0367006  191
+23.28       20.12     6.95                                        M0367006  192
+23.52       15.29     8.78                                        M0367006  193
+ENDDATA            187                                            M0367006  194
+ENDSUBENT          193                                            M036700699999
+ENDENTRY             2                                            M036799999999
+ENTRY            M0696   20260120   20260302   20260302       M144M0696000    1
+SUBENT        M0696001   20260120   20260302   20260302       M144M0696001    1
+BIB                 14         38                                 M0696001    2
+TITLE      Photoneutron cross section measurements on the N = 82  M0696001    3
+            nuclei 139La and 141Pr: Implications for p-process    M0696001    4
+            nucleosynthesis.                                      M0696001    5
+AUTHOR     (H.Utsunomiya,A.Makinaga,S.Goko,T.Kaihori,H.Akimune,   M0696001    6
+           T.Yamagata,M.Ohta,H.Toyokawa,S.Muller,Y.-W.Lui,        M0696001    7
+           S.Goriely)                                             M0696001    8
+REFERENCE  (J,PR/C,74,025806,2006)                                M0696001    9
+INSTITUTE  (2JPNKON,2JPNAIS,2GERTHD,1USATAM,2BLGBRU)              M0696001   10
+FACILITY   (ESTRG,2JPNAIS) Electron storage ring TERAS at the     M0696001   11
+            National Institute of Advanced Industrial Science and M0696001   12
+            Technology (AIST).                                    M0696001   13
+INC-SOURCE (QMPH) Laser Compton scattering (LCS).                 M0696001   14
+DETECTOR   (PROPC) 3He proportional counters.                     M0696001   15
+METHOD     (RINGR) 16 proportional 3He counters embedded in a     M0696001   16
+            polyethilene; 8 of those located as inner ring.       M0696001   17
+SAMPLE     Metallic 139La (99.9%) and 141Pr (99.9%) targets 20 mm M0696001   18
+            in diameter and 4 mm in thickness.                    M0696001   19
+ANALYSIS   Direct measurement. Correction for gamma-quanta        M0696001   20
+            nonmonocromativity using the Taylor series            M0696001   21
+            presentation.                                         M0696001   22
+ERR-ANALYS (ERR-S) Statistical error                              M0696001   23
+           (ERR-SYS) The systematic uncertainty is between 5.8%   M0696001   24
+            and 7.2%, as determined by the neutron detection      M0696001   25
+            efficiency (5%), the number of incident LCS           M0696001   26
+            gamma-rays (3%), and the electron beam size effect    M0696001   27
+            (< 4.2%).                                             M0696001   28
+COMMENT    Cross sections of the 139La(g,n) and 141Pr(g,n)        M0696001   29
+            reactions were measured using quasi-monochromatic     M0696001   30
+            gamma-ray beams from laser Compton scattering.        M0696001   31
+           No evidence for sufficient thermonuclear p-process     M0696001   32
+            contribution to the rare odd-odd nuclide 138La was    M0696001   33
+            found.                                                M0696001   34
+STATUS     (TABLE,,H.Utsunomiya+,W,UTSUNOMIYA,20061030)           M0696001   35
+            Data presented in Fig. 3.                             M0696001   36
+HISTORY    (20061030C) Russia MSU SINP CDFE by V.Varlamov         M0696001   37
+           (20061030R) Tabulated data obtained from               M0696001   38
+            Dr.H.Utsunomiya through Dr.N.Otsuka.                  M0696001   39
+           (20260106U) Corrected by VV and SD: STATUS.            M0696001   40
+ENDBIB              38                                            M0696001   41
+NOCOMMON             0          0                                 M0696001   42
+ENDSUBENT           41                                            M069600199999
+SUBENT        M0696003   20061204   20070306   20070214       M041M0696003    1
+BIB                  1          1                                 M0696003    2
+REACTION   (59-PR-141(G,N)59-PR-140,,SIG)                         M0696003    3
+ENDBIB               1                                            M0696003    4
+NOCOMMON             0          0                                 M0696003    5
+DATA                 4          9                                 M0696003    6
+EN         DATA       ERR-S      ERR-SYS                          M0696003    7
+MEV        MB         MB         MB                               M0696003    8
+   9.5        27.        2.         2.                            M0696003    9
+   9.7        30.        1.2        1.9                           M0696003   10
+   9.8        36.        0.9        2.2                           M0696003   11
+  10.0        32.        1.6        1.9                           M0696003   12
+  10.3        47.        1.1        2.8                           M0696003   13
+  10.6        49.        1.         2.9                           M0696003   14
+  11.0        54.        1.3        3.2                           M0696003   15
+  11.6        83.        1.5        4.9                           M0696003   16
+  12.4       128.        1.5        7.5                           M0696003   17
+ENDDATA             11                                            M0696003   18
+ENDSUBENT           17                                            M069600399999
+ENDENTRY             2                                            M069699999999
+ENDREQUEST           1                                            Z999999999999
