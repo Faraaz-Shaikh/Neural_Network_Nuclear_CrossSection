@@ -1,0 +1,207 @@
+REQUEST        7845001   20260725     144500   20260617          3    0  0    0
+ENTRY            G0512   20190401   20190722   20190719       G043G0512000    1
+SUBENT        G0512001   20190401   20190722   20190719       G043G0512001    1
+BIB                 14         41                                 G0512001    2
+TITLE      Measurement of photo-neutron cross-sections of Gd and  G0512001    3
+           Ce using bremsstrahlung with an end-point energy of 10 G0512001    4
+           MeV                                                    G0512001    5
+AUTHOR     (R.Ghosh, S.Badwar, B.Lawriniang, S.S.Yerraguntla,     G0512001    6
+            H.Naik, Y.Naik, S.V.Suryanarayana, B.Jyrwa, S.Ganesan)G0512001    7
+INSTITUTE  (3INDNEH,3INDMNP,3INDTRM)                              G0512001    8
+REFERENCE  (J,JRN,314,1983,2017)                                  G0512001    9
+FACILITY   (LINAC,3INDTRM) Electron Beam Centre                   G0512001   10
+INC-SOURCE (BRST) 10 MeV electron on a 0.025 mm-thick Ta foil     G0512001   11
+SAMPLE     A weighted amount of 0.04859 g of Gd2O3 and 0.06983 g  G0512001   12
+           of CeO2 were wrapped in pure aluminium foil of         G0512001   13
+           thickness 0.025 mm. The amount of Gd and Ce in the     G0512001   14
+           oxides were 0.0421 +- 0.0008 g and 0.0568 +- 0.0011 g, G0512001   15
+           respectively. The 197Au metal foil, weighing 0.0849 +- G0512001   16
+           0.0017 g and of thickness 0.025 mm was wrapped         G0512001   17
+           separately with pure aluminium foil                    G0512001   18
+DETECTOR   (HPGE) A pre-calibrated 150 cc HPGe detector, coupled  G0512001   19
+           to a PC based 4 K channel analyzer, having 20 %        G0512001   20
+           efficiency relative to a 3 inch diameter x 3 inch      G0512001   21
+           length NaI(Tl) detector. The detector resolution       G0512001   22
+           was 1.8 keV FWHM at 1332.5 keV gamma-ray peak of 60Co. G0512001   23
+METHOD     (ACTIV) The target assembly was irradiated for 4 hours.G0512001   24
+           During irradiation, the peak current of the electron   G0512001   25
+           beam was 33 mA with a frequency of 350 Hz pulse width  G0512001   26
+           of 10 us and beam power of 1.13 kW.                    G0512001   27
+MONITOR    (79-AU-197(G,N)79-AU-196,,SIG,,BRA)                    G0512001   28
+DECAY-MON  (79-AU-196-G,6.1669D,DG,355.7,0.87)                    G0512001   29
+MONIT-REF  (,A.I.Blokhin+,R,IAEA-TECDOC-1178,2000)                G0512001   30
+ERR-ANALYS (ERR-T) Total uncertainty                              G0512001   31
+           (ERR-1) Net peak area measured Ce or Gd                G0512001   32
+           (ERR-2) Net peak area measured Au                      G0512001   33
+           (ERR-3) Weight of Ce or Gd                             G0512001   34
+           (ERR-4) Weight of Au                                   G0512001   35
+           (ERR-5) Average mass of Ce or Gd                       G0512001   36
+           (ERR-6) Average mass of Au                             G0512001   37
+           (ERR-7) Isotopic abundance of Ce or Gd                 G0512001   38
+           (ERR-8) Intensity of gamma-ray transition of Ce or Gd  G0512001   39
+           (ERR-9) Intensity of gamma-ray transition of Au        G0512001   40
+           (ERR-10) Time factor Ce or Gd                          G0512001   41
+           (ERR-11) Time factor Au                                G0512001   42
+HISTORY    (20190401C) VT                                         G0512001   43
+ENDBIB              41                                            G0512001   44
+COMMON               1          3                                 G0512001   45
+MONIT                                                             G0512001   46
+MB                                                                G0512001   47
+     36.030                                                       G0512001   48
+ENDCOMMON            3                                            G0512001   49
+ENDSUBENT           48                                            G051200199999
+SUBENT        G0512003   20190401   20190722   20190719       G043G0512003    1
+BIB                  3          4                                 G0512003    2
+REACTION   (64-GD-160(G,N)64-GD-159,,SIG,,BRA)                    G0512003    3
+DECAY-DATA (64-GD-159,18.479HR,DG,363.5,0.1178)                   G0512003    4
+STATUS     (TABLE) Table 8 of J. Radioanal. Nucl. Chem. 314 (2017)G0512003    5
+           1983                                                   G0512003    6
+ENDBIB               4                                            G0512003    7
+COMMON              11          6                                 G0512003    8
+ERR-1      ERR-2      ERR-3      ERR-4      ERR-5      ERR-6      G0512003    9
+ERR-7      ERR-8      ERR-9      ERR-10     ERR-11                G0512003   10
+MB         MB         MB         MB         MB         MB         G0512003   11
+MB         MB         MB         MB         MB                    G0512003   12
+   9.768E-1   4.225E-1   7.378E-1   7.775E-1   3.388E-7   1.058E-8G0512003   13
+   3.375E-1   1.648E-1      1.339   6.145E-3   3.708E-3           G0512003   14
+ENDCOMMON            6                                            G0512003   15
+DATA                 3          1                                 G0512003   16
+EN-MAX     DATA       ERR-T                                       G0512003   17
+MEV        MB         MB                                          G0512003   18
+        10.     38.829      2.068                                 G0512003   19
+ENDDATA              3                                            G0512003   20
+ENDSUBENT           19                                            G051200399999
+ENDENTRY             2                                            G051299999999
+ENTRY            G0518   20231106   20240400   20240331       G052G0518000    1
+SUBENT        G0518001   20231106   20240400   20240331       G052G0518001    1
+BIB                 13         28                                 G0518001    2
+TITLE      Average photonuclear cross section measurements for    G0518001    3
+           the 141Pr, 160Gd and 162Er isotopes and compared with  G0518001    4
+           Geant4 simulations                                     G0518001    5
+AUTHOR     (G.T.Bholane, T.S.Ganesapandy, S.H.Patil, S.S.Dahiwale,G0518001    6
+           V.N.Bhoraskar, S.D.Dhole)                              G0518001    7
+INSTITUTE  (3INDPOO)                                              G0518001    8
+REFERENCE  (J,EPJ/A,59,127,2023)                                  G0518001    9
+           #doi:10.1140/epja/s10050-023-01042-3                   G0518001   10
+FACILITY   (LINAC,3INDIND) Medical linear accelerator at          G0518001   11
+           Dr.Vikhe Patil Memorial Hospital, Ahmednagar           G0518001   12
+INC-SOURCE (BRST) 10 MeV and 15 MeV electron on a tungsten        G0518001   13
+           target.                                                G0518001   14
+SAMPLE     Pr2O3, Gd2O3 and Er2O3 powder (99.99% pure, 1 gm)      G0518001   15
+           sample of natural isotopic abundance. The Au foil used G0518001   16
+           for bremsstrahlung flux monitoring weighed 0.5 gm each.G0518001   17
+DETECTOR   (HPGE) resolution of 1.5 keV at 1.33 MeV gamma peak    G0518001   18
+MONITOR    (79-AU-197(G,N)79-AU-196,,SIG,,BRA)                    G0518001   19
+DECAY-MON  (79-AU-196-G,6.1669D,DG,355.73,0.87)                   G0518001   20
+ERR-ANALYS (ERR-T) Total uncertainty of measured cross section    G0518001   21
+           are due to                                             G0518001   22
+           (ERR-1) Area under the gamma peak                      G0518001   23
+           (ERR-2) Number of target atoms                         G0518001   24
+           (ERR-3) Gamma peak intensity                           G0518001   25
+           (ERR-4) Detector efficiency                            G0518001   26
+           (ERR-5) Integrated photon flux                         G0518001   27
+STATUS     (APRVD) Proof-read by S.D.Dhole (2024-01-20)           G0518001   28
+           (TABLE,,G.T.Bholane+,J,EPJ/A,59,127,2023) Table 6      G0518001   29
+HISTORY    (20231116C) Dr. Vishal D Bharud                        G0518001   30
+ENDBIB              28                                            G0518001   31
+NOCOMMON             0          0                                 G0518001   32
+ENDSUBENT           31                                            G051800199999
+SUBENT        G0518003   20231116   20240400   20240331       G052G0518003    1
+BIB                  2          2                                 G0518003    2
+REACTION   (64-GD-160(G,N)64-GD-159,,SIG,,BRA)                    G0518003    3
+DECAY-DATA (64-GD-159,18.479HR,DG,363.543,0.1178)                 G0518003    4
+ENDBIB               2                                            G0518003    5
+COMMON               3          3                                 G0518003    6
+ERR-2      ERR-3      ERR-4                                       G0518003    7
+PER-CENT   PER-CENT   PER-CENT                                    G0518003    8
+       0.88       0.42       2.96                                 G0518003    9
+ENDCOMMON            3                                            G0518003   10
+DATA                 6          2                                 G0518003   11
+EN-MAX     DATA       ERR-T      MONIT      ERR-1      ERR-5      G0518003   12
+MEV        MB         PER-CENT   MB         PER-CENT   PER-CENT   G0518003   13
+        10.      13.43       7.57      30.28        4.4       5.32G0518003   14
+        15.     135.08       6.25     161.24       1.39       5.24G0518003   15
+ENDDATA              4                                            G0518003   16
+ENDSUBENT           15                                            G051800399999
+ENDENTRY             2                                            G051899999999
+ENTRY            M0611   20160202   20160401   20160311       M081M0611000    1
+SUBENT        M0611001   20160202   20160401   20160311       M081M0611001    1
+BIB                 13         23                                 M0611001    2
+TITLE      Photonuclear quadrupole resonance in 160Gd.            M0611001    3
+AUTHOR     (F.Dreyer,H.Dahmen,J.Staube,H.H.Thies)                 M0611001    4
+INSTITUTE  (2GERHEI)                                              M0611001    5
+REFERENCE  (J,NP/A,192,433,1972)                                  M0611001    6
+FACILITY   (BETAT,2GERHEI) Heidelberg 33 MeV betatron.            M0611001    7
+INC-SOURCE (BRST)                                                 M0611001    8
+METHOD     (ACTIV)                                                M0611001    9
+SAMPLE     Samples of 99.9 % pure 160Gd.                          M0611001   10
+DETECTOR   (IOCH) Ionization chamber.                             M0611001   11
+ANALYSIS   (LEAST) Cook least-structure method.                   M0611001   12
+ERR-ANALYS (DATA-ERR) Mean-root-squared unsertainties.            M0611001   13
+COMMENT    The (g,n) and  (g,p)  cross  section  in  160Gd  were  M0611001   14
+            measured from    threshold    to    33   MeV   using  M0611001   15
+            bremsstrahlung from 33 MeV betatron and observing the M0611001   16
+            induced activities.  Both  cross  sections contain a  M0611001   17
+            broad maximum at 23.5 MeV.  It is argued  that  this  M0611001   18
+            maximum is the quadrupole resonance predicted at 1.6  M0611001   19
+            times the  E1  giant   resonance   energy   by   the  M0611001   20
+            hydrodinamic model.                                   M0611001   21
+HISTORY    (20000324C) Data were compiled at the Russia MSU SINP  M0611001   22
+            CDFE by V.Varlamov.                                   M0611001   23
+           (20160202A) Corrected by V.Varlamov: ERR-ANALYS,       M0611001   24
+            METHOD, REACTION, STATUS, lowercase.                  M0611001   25
+ENDBIB              23                                            M0611001   26
+NOCOMMON             0          0                                 M0611001   27
+ENDSUBENT           26                                            M061100199999
+SUBENT        M0611002   20160202   20160401   20160311       M081M0611002    1
+BIB                  5          6                                 M0611002    2
+REACTION   (64-GD-160(G,N)64-GD-159,,SIG,,BRS)                    M0611002    3
+METHOD     (GSPEC) 18.45 h b- activity of 159Gd.                  M0611002    4
+DECAY-DATA (64-GD-159,18.45HR,B-)                                 M0611002    5
+STATUS     (CURVE) Data from Fig. 2 b of NP/A,192,433,1972.       M0611002    6
+HISTORY    (20160202A) Corrected by V.Varlamov: STATUS,           M0611002    7
+           METHOD, DECAY-DATA, SF8 = BRS in REACTION.             M0611002    8
+ENDBIB               6                                            M0611002    9
+NOCOMMON             0          0                                 M0611002   10
+DATA                 3         35                                 M0611002   11
+EN         DATA       DATA-ERR                                    M0611002   12
+MEV        MB         MB                                          M0611002   13
+     7.67    11.56     2.72                                       M0611002   14
+     8.25    28.91     4.42                                       M0611002   15
+     8.72    42.51     3.06                                       M0611002   16
+     9.23    60.54     4.76                                       M0611002   17
+     9.71    84.01     4.42                                       M0611002   18
+    10.19   117.00     5.44                                       M0611002   19
+    10.67   153.74     4.76                                       M0611002   20
+    11.08   186.73     5.78                                       M0611002   21
+    11.38   210.20     6.12                                       M0611002   22
+    11.67   227.55     7.82                                       M0611002   23
+    11.99   241.49     7.48                                       M0611002   24
+    12.34   251.36     8.50                                       M0611002   25
+    12.66   253.06     8.16                                       M0611002   26
+    12.96   245.57     8.16                                       M0611002   27
+    13.27   230.95     8.50                                       M0611002   28
+    13.55   214.62     9.18                                       M0611002   29
+    13.89   201.70     9.86                                       M0611002   30
+    14.19   189.11     9.52                                       M0611002   31
+    14.47   173.80    10.54                                       M0611002   32
+    14.72   156.80    11.22                                       M0611002   33
+    15.04   143.87    11.22                                       M0611002   34
+    15.36   142.17    10.88                                       M0611002   35
+    15.65   143.53    11.56                                       M0611002   36
+    15.95   140.47    10.54                                       M0611002   37
+    16.38   129.25     8.84                                       M0611002   38
+    16.78   104.76     7.48                                       M0611002   39
+    17.25    83.33     7.82                                       M0611002   40
+    17.76    61.22     6.80                                       M0611002   41
+    18.58    47.27     5.10                                       M0611002   42
+    19.56    37.07     5.78                                       M0611002   43
+    20.57    32.99     4.42                                       M0611002   44
+    21.58    33.33     4.76                                       M0611002   45
+    22.61    36.39     5.10                                       M0611002   46
+    23.61    36.73     4.76                                       M0611002   47
+    24.60    34.01     4.08                                       M0611002   48
+ENDDATA             37                                            M0611002   49
+ENDSUBENT           48                                            M061100299999
+ENDENTRY             2                                            M061199999999
+ENDREQUEST           1                                            Z999999999999

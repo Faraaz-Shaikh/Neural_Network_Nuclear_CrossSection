@@ -1,0 +1,61 @@
+ENTRY            M0786   20130627   20130823   20130819       M067
+SUBENT        M0786001   20130627   20130823   20130819       M067
+BIB                 12         22
+TITLE      Deformation on isomeric excitation of Eu isotopes
+            in (gamma,n) and (n,gamma) reactions.
+AUTHOR     (A.P.Tonchev,Yu.P.Gangrskiy,A.G.Belov,V.E.Zhuchko)
+REFERENCE  (J,PR/C,58,(5),2851,1998)
+           #doi:10.1103/PhysRevC.58.2851
+INSTITUTE  (4ZZZDUB)
+           (1USAISU)
+FACILITY   (MICRT,4ZZZDUB) MT-25    Microtron   of   the   Flerov
+            Laboratory of Nuclear Reactions at JINR, Dubna.
+INC-SOURCE (BRST)
+SAMPLE     Eu2-O3 samples  of  natural  isotopic  composition  or
+            enriched in 153Eu had  a  weight  of  100  mg  and  a
+            surface of 1cm**2.
+MONITOR    (27-CO-59(N,G)27-CO-60,,SIG)
+DETECTOR   (GELI) Ge(Li)  detector  with  fiducial  volume  of 60
+            cm**3.  The energy resolution was 3 keV for 1332  keV
+            gamma-line of 60Co.
+ERR-ANALYS (DATA-ERR) No information.
+STATUS     (COREL,41339001) (n,g) data given.
+HISTORY    (20100226C) Data  were compiled at the Russia MSU SINP
+            CDFE by V.Varlamov.
+           (20130627A) Corrected by V.Varlamov: REACTION.
+ENDBIB              22
+NOCOMMON             0          0
+ENDSUBENT           25
+SUBENT        M0786002   20130627   20130823   20130819       M067
+BIB                 10         17
+REACTION   (63-EU-153(G,N)63-EU-152-M2,,SIG,,BRS)
+METHOD     (EXTB,SITA)
+DECAY-DATA (63-EU-152-M2,96.MIN,DG,89.8,0.7236)
+MONITOR    (29-CU-65(G,N)29-CU-64,,SIG)
+ANALYSIS   (UNFLD) An   iterative   procedure   for   minimizing
+            directed divergences was employed.
+REL-REF    (R,,V.E.Zhuchko,J,SNP,25,124,1977)
+            Iterative unfolding procedure.
+CRITIQUE   An iterative  unfolding procedure named "interactive"
+            one.
+           Reference  for  MONITOR   reaction  is  given  not  to
+            original article but to comprehensive Atlas of data.
+MONIT-REF  (L0006009,S.C.Fultz+,J,PR,133,B1149,1964)
+            Experimental data for monitor  (G,N)  reaction  cross
+            section.
+STATUS     (CURVE)  Data from Fig. 4.
+HISTORY    (20130627A) Corrected  by  V.Varlamov:  BRA -> BRS.
+ENDBIB              17
+NOCOMMON             0          0
+DATA                 3          6
+EN         DATA       DATA-ERR
+MEV        MB         MB
+    12.       .816       .065
+    13.      1.555       .123
+    14.      1.514       .121
+    15.      1.819       .142
+    16.      1.5         .13
+    17.       .982       .08
+ENDDATA              8
+ENDSUBENT           30
+ENDENTRY             2
