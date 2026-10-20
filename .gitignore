@@ -1,0 +1,24 @@
+# Python-generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+
+# Virtual environments
+.venv
+
+# ignore the log files
+*.log
+/logs/
+
+# the .env file might contain sensitive data
+.env
+
+# don't need to track code coverage
+.coverage
+
+# the .ignore file is only for local use - for ripgrep
+.ignore
+

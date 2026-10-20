@@ -1,0 +1,62 @@
+[project]
+name = "nn-nuclear-xs"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "Danish Shakeel Mohammad", email = "mohammadsdanish@gmail.com" }
+]
+requires-python = ">=3.12"
+dependencies = [
+    "loguru>=0.7.3",
+    "rich>=15.0.0",
+]
+
+[project.scripts]
+nn-nuclear-xs = "nn_nuclear_xs:main"
+
+[build-system]
+requires = ["uv_build>=0.13.1,<0.14.0"]
+build-backend = "uv_build"
+
+[dependency-groups]
+dev = [
+    "ipdb>=0.13.13",
+    "ruff>=0.17.1",
+]
+
+[tool.ruff]
+line-length = 99
+
+# this excludes ruff from acting on the listed files and folders
+# extend-exclude = [
+#     "src/sudoku_generator/utils/tdoku.py",
+# ]
+
+# the TC type checking rules assume that a name that appears only in annotations is never touched at runtime, so moving it into an if TYPE_CHECKING: block saves import time and breaks circular imports. That premise is true only when nothing evaluates annotations at runtime. Beartype voids it completely. Have not yet added beartype to this project, so have included TC
+[tool.ruff.lint]
+# see: https://docs.astral.sh/ruff/rules/
+select = ["ALL"]
+ignore = [
+    'COM812',      # Trailing comma missing - can cause conflicts with formatter
+    'D203',        # 1 blank line required before class docstring - conflict
+    'D213',        # Multi-line docstring summary should start at the second line - conflict with D212
+    'ERA001',      # Found commented out code
+    'EXE002',      # The file is executable but no shebang is present
+    'FIX002',      # Line contains TODO, consider resolving the issue
+    # 'PLR0913',     # Too many arguments in function definition - can't use with injector
+    # 'PLR0917',     # Too many positional arguments - can't use with injector
+    'T201',        # print statement not allowed
+    # 'TC001',       # Move application import {} into a type-checking block - conflicts with beartype
+    # 'TC002',       # Move third-party import {} into a type-checking block - conflicts with beartype
+    # 'TC003',       # Move standard library import {} into a type-checking block - conflicts with beartype
+]
+
+[tool.ruff.lint.isort]
+known-first-party = ["nn_nuclear_xs"]
+combine-as-imports = true
+
+# if you do import ipdb; ipdb.set_trace() it will now show 15 lines of context by default
+[tool.ipdb]
+context=15
+
