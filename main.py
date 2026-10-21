@@ -19,6 +19,8 @@ import argparse
 
 from loguru import logger as log
 
+from nn_nuclear_xs.data_handler.fetch_data import extract_gdr_data
+from nn_nuclear_xs.data_handler.process_data import gdr_to_csv
 from nn_nuclear_xs.exploration.misc import miscellaneous_function
 from nn_nuclear_xs.utils.logger_setup import setup_logging
 
@@ -26,11 +28,19 @@ from nn_nuclear_xs.utils.logger_setup import setup_logging
 def get_args() -> argparse.Namespace:
     """Parse and get any cli arguments."""
     parser = argparse.ArgumentParser()
-    parser.add_argument(
+    group_01 = parser.add_mutually_exclusive_group()
+    group_01.add_argument(
         "--misc",
         default=False,
         action="store_true",
         help="run the miscellaneous_function in misc.py",
+    )
+    group_02 = parser.add_mutually_exclusive_group()
+    group_02.add_argument(
+        "--proc-data",
+        default=False,
+        action="store_true",
+        help="download the data (if possible through automation); and process the required data into a usable (csv) format.",
     )
     return parser.parse_args()
 
@@ -44,6 +54,16 @@ def main() -> None:
         args = get_args()
         if args.misc:
             miscellaneous_function()
+            return
+        elif args.proc_data:
+            log.info(
+                "Ensure GDR data is available at data/gdr_all.zip, "
+                "since automated download is blocked for it."
+            )
+            extract_gdr_data()
+            gdr_to_csv()
+            log.debug("Extracted and converted GDR data to CSV format.")
+
         log.debug("\n\n:{}:\n", "=" * 30)
     except Exception:  # noqa: BLE001
         log.exception("Error in main function")

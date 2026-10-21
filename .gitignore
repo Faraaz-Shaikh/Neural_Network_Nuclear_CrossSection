@@ -22,3 +22,6 @@ wheels/
 # the .ignore file is only for local use - for ripgrep
 .ignore
 
+# only the directly downloaded zip file is required
+/data/**
+!/data/gdr_all.zip

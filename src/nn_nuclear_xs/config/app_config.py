@@ -15,6 +15,7 @@
 
 """Contains the full config for the project."""
 
+from nn_nuclear_xs.config.data_handler import DataConfig
 from nn_nuclear_xs.config.logs import LogConfig
 
 
@@ -24,6 +25,7 @@ class AppConfig:
     def __init__(self) -> None:
         """All configs together."""
         self.log_config = LogConfig()
+        self.data_config = DataConfig()
 
 
 cfg = AppConfig()

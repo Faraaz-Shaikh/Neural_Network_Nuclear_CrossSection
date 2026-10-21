@@ -9,6 +9,8 @@ authors = [
 requires-python = ">=3.12"
 dependencies = [
     "loguru>=0.7.3",
+    "pytest-cov>=7.1.0",
+    "requests>=2.34.2",
     "rich>=15.0.0",
 ]
 
@@ -22,6 +24,7 @@ build-backend = "uv_build"
 [dependency-groups]
 dev = [
     "ipdb>=0.13.13",
+    "pytest>=9.1.1",
     "ruff>=0.17.1",
 ]
 
@@ -60,3 +63,31 @@ combine-as-imports = true
 [tool.ipdb]
 context=15
 
+[tool.coverage.run]
+source = ["src/nn_nuclear_xs"]
+branch = true
+omit = ["*/tests/*", "*/__init__.py", "*/exploration/*"]
+
+[tool.coverage.report]
+show_missing = true
+skip_covered = false
+precision = 2
+
+[tool.pytest.ini_options]
+# anything in add opts (options) gets added to the pytest command.
+addopts = [
+    # -ra: show short summary of all non-passing tests at the end
+    "-ra",
+    # -v:  show each test name and its pass/fail status
+    "-v",
+    # the import mode controls how pytest imports modules. by default, the imports are done by adding the parent directory prepended to the sys.path. importlib means that sys.path is not touched and importlib module is used instead for imports. This (importlib) is the modern recommendation.
+    "--import-mode=importlib",
+    # --cov=frag: that tells pytest-cov to track coverage of my package
+    "--cov=nn_nuclear_xs",
+    # this creates a html report where you can actually look at the file and see which lines are covered and which not
+    # "--cov-report=html:reports/htmlcov",
+    # this adds a terminal report with an extra column showing missing line numbers and it also skips files which are 100% covered
+    "--cov-report=term-missing:skip-covered"
+]
+# this tells pytest where to search for test files - by restricting to tests folder we ensure that things are a little faster - pytest does not spend time walking through src folder
+testpaths = ["tests"]
