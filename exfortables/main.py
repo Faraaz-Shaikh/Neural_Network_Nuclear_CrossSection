@@ -23,7 +23,7 @@ t = Talys()
 #     ["Nd", 142, 60], ["Nd", 143, 60], ["Nd", 144, 60], ["Nd", 145, 60], ["Nd", 146, 60], ["Nd", 148, 60], ["Nd", 150, 60]
 # ]
 
-targets = [["Zr", 90, 40]]
+targets = [["Sn", 114, 50]]
 
 for target in targets:
     symbol, A, Z = target
